@@ -25,17 +25,29 @@ public class App
         // eo1.setEmp_city("Muzaffarpur");
 
         // fetch the data from database
+        // try{
+        //     Employee eo2=s.get(Employee.class, 1);
+        //     if(eo2!=null){
+        //         System.out.println("Id:"+eo2.getEmp_id());
+        //         System.out.println("Fname:"+eo2.getEmp_fname());
+        //         System.out.println("Lname:"+eo2.getEmp_lname());
+        //         System.out.println("City:"+eo2.getEmp_city());
+        //     } else{
+        //         System.out.println("Data is not found");
+        //     }
+        // } catch(Exception e){
+        //     e.printStackTrace();
+        // }
+
+        // update data to the database
         try{
-            Employee eo2=s.get(Employee.class, 1);
-            if(eo2!=null){
-                System.out.println("Id:"+eo2.getEmp_id());
-                System.out.println("Fname:"+eo2.getEmp_fname());
-                System.out.println("Lname:"+eo2.getEmp_lname());
-                System.out.println("City:"+eo2.getEmp_city());
-            } else{
-                System.out.println("Data is not found");
-            }
+            Employee eo3=s.get(Employee.class, 1);
+            eo3.setEmp_city("NewDelhi");
+            s.saveOrUpdate(eo3);
+            tr.commit();
+            System.out.println("city updated");
         } catch(Exception e){
+            tr.rollback();
             e.printStackTrace();
         }
         
