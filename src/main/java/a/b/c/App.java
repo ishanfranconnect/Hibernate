@@ -19,18 +19,35 @@ public class App
         Session s=sf.openSession();
         Transaction tr=s.beginTransaction();
 
-        Employee eo1=new Employee();
-        eo1.setEmp_fname("Ishita");
-        eo1.setEmp_lname("Anand");
-        eo1.setEmp_city("Muzaffarpur");
+        // Employee eo1=new Employee();
+        // eo1.setEmp_fname("Ishita");
+        // eo1.setEmp_lname("Anand");
+        // eo1.setEmp_city("Muzaffarpur");
 
+        // fetch the data from database
         try{
-            s.save(eo1);
-            tr.commit();
+            Employee eo2=s.get(Employee.class, 1);
+            if(eo2!=null){
+                System.out.println("Id:"+eo2.getEmp_id());
+                System.out.println("Fname:"+eo2.getEmp_fname());
+                System.out.println("Lname:"+eo2.getEmp_lname());
+                System.out.println("City:"+eo2.getEmp_city());
+            } else{
+                System.out.println("Data is not found");
+            }
         } catch(Exception e){
-            tr.rollback();
             e.printStackTrace();
         }
+        
+
+
+        // try{
+        //     s.save(eo1);
+        //     tr.commit();
+        // } catch(Exception e){
+        //     tr.rollback();
+        //     e.printStackTrace();
+        // }
 
     
 

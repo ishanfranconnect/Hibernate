@@ -28,10 +28,13 @@ public class Employee {
     public void setEmp_lname(String emp_lname){
         this.emp_lname=emp_lname;
     }
-    public String getEmp_lname(String emp_lname){
+    public String getEmp_lname(){
         return emp_lname;
     }
     public void setEmp_city(String emp_city){
         this.emp_city=emp_city;
+    }
+    public String getEmp_city(){
+        return emp_city;
     }
 }
