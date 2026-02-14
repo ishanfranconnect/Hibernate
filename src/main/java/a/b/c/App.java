@@ -40,12 +40,25 @@ public class App
         // }
 
         // update data to the database
+        // try{
+        //     Employee eo3=s.get(Employee.class, 1);
+        //     eo3.setEmp_city("NewDelhi");
+        //     s.saveOrUpdate(eo3);
+        //     tr.commit();
+        //     System.out.println("city updated");
+        // } catch(Exception e){
+        //     tr.rollback();
+        //     e.printStackTrace();
+        // }
+
+        // delete data from the database;
+
         try{
-            Employee eo3=s.get(Employee.class, 1);
-            eo3.setEmp_city("NewDelhi");
-            s.saveOrUpdate(eo3);
-            tr.commit();
-            System.out.println("city updated");
+            Employee eo4=new Employee();
+        eo4.setEmp_id(1);
+        s.delete(eo4);
+        tr.commit();
+        System.out.println("data delted");
         } catch(Exception e){
             tr.rollback();
             e.printStackTrace();
