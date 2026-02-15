@@ -127,40 +127,71 @@ public class App
 
     // praticting by own;
 
-    Questions q1=new Questions();
-    q1.setQues_id(1);
-    q1.setQues_name("DSA");
+    // Questions q1=new Questions();
+    // q1.setQues_id(1);
+    // q1.setQues_name("DSA");
 
-    Answers ao1=new Answers();
-    ao1.setAns_id(101);
-    ao1.setAns_name("Soluton 1");
+    // Answers ao1=new Answers();
+    // ao1.setAns_id(101);
+    // ao1.setAns_name("Soluton 1");
 
-    Answers ao2=new Answers();
-    ao2.setAns_id(102);
-    ao2.setAns_name("Soluton 2");
+    // Answers ao2=new Answers();
+    // ao2.setAns_id(102);
+    // ao2.setAns_name("Soluton 2");
     
-    Answers ao3=new Answers();
-    ao3.setAns_id(103);
-    ao3.setAns_name("Soluton 3");
+    // Answers ao3=new Answers();
+    // ao3.setAns_id(103);
+    // ao3.setAns_name("Soluton 3");
 
-    List<Answers> list=new ArrayList<Answers>();
-    list.add(ao1);
-    list.add(ao2);
-    list.add(ao3);
+    // List<Answers> list=new ArrayList<Answers>();
+    // list.add(ao1);
+    // list.add(ao2);
+    // list.add(ao3);
 
-    q1.setAns(list);
+    // q1.setAns(list);
 
-    ao1.setQues(q1);
-    ao2.setQues(q1);
-    ao3.setQues(q1);
+    // ao1.setQues(q1);
+    // ao2.setQues(q1);
+    // ao3.setQues(q1);
 
 
+    // praticed on 6 lecture
+    Employee2 e1=new Employee2();
+    e1.setEmp_id(11);
+    e1.setEmp_name("Ishan");
 
+    Employee2 e2=new Employee2();
+    e2.setEmp_id(12);
+    e2.setEmp_name("Ishita");
+
+   
+
+    Project p1=new Project();
+    p1.setPro_id(101);
+    p1.setPro_name("Facebook project");
+
+
+    Project p2=new Project();
+    p2.setPro_id(102);
+    p2.setPro_name("Amazon project");
+
+    List<Employee2> list1=new ArrayList<Employee2>();
+    list1.add(e1);
+    list1.add(e2);
+
+    List<Project> list2=new ArrayList<Project>();
+    list2.add(p1);
+    list2.add(p2);
+
+
+    e1.setP(list2);
+    p2.setE(list1);
+    
         try{
-            s.save(q1);
-            s.save(ao1);
-            s.save(ao2);
-            s.save(ao3);
+            s.save(e1);
+            s.save(e2);
+            s.save(p1);
+            s.save(p2);
             tr.commit();
         } catch(Exception e){
             tr.rollback();
