@@ -6,14 +6,14 @@
     <hibernate-configuration>
         <session-factory>
             <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-            <property name="connection.url">jdbc:mysql://localhost:3306/manytoone</property>
+            <property name="connection.url">jdbc:mysql://localhost:3306/quesans</property>
             <property name="connection.username">root</property>
             <property name="connection.password">root123</property>
 
             <property name="hibernate.hbm2ddl.auto">update</property>
             <property name="hibernate.show_sql">true</property>
 
-            <mapping class="a.b.c.Employee1"/>
-            <mapping class="a.b.c.Laptop"/>
+            <mapping class="a.b.c.Questions"/>
+            <mapping class="a.b.c.Answers"/>
         </session-factory>
     </hibernate-configuration>

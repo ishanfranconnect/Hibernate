@@ -75,6 +75,7 @@ public class App
     //     ao.setCity("mumbai2");
     //     ao.setState("maharaastra2");
     //     ao.setCountry("india2");
+
     //     eo1.setA(ao);
 
 
@@ -96,39 +97,70 @@ public class App
 
     // lectur 5 ka object h ye
 
-    Employee1 e1=new Employee1();
-    e1.setEmp_id(12);
-    e1.setEmp_name("Ishan");
+    // Employee1 e1=new Employee1();
+    // e1.setEmp_id(12);
+    // e1.setEmp_name("Ishan");
 
-    Laptop lp1=new Laptop();
-    lp1.setlapy_id(101);
-    lp1.setlapy_name("APPLE");
+    // Laptop lp1=new Laptop();
+    // lp1.setlapy_id(101);
+    // lp1.setlapy_name("APPLE");
 
-    Laptop lp2=new Laptop();
-    lp2.setlapy_id(102);
-    lp2.setlapy_name("DELL");
+    // Laptop lp2=new Laptop();
+    // lp2.setlapy_id(102);
+    // lp2.setlapy_name("DELL");
     
 
-    Laptop lp3=new Laptop();
-    lp3.setlapy_id(103);
-    lp3.setlapy_name("HP");
+    // Laptop lp3=new Laptop();
+    // lp3.setlapy_id(103);
+    // lp3.setlapy_name("HP");
 
-    List<Laptop> list=new ArrayList<Laptop>();
-    list.add(lp1);
-    list.add(lp2);
-    list.add(lp3);
+    // List<Laptop> list=new ArrayList<Laptop>();
+    // list.add(lp1);
+    // list.add(lp2);
+    // list.add(lp3);
 
-    e1.setLpts(list);
+    // e1.setLpts(list);
 
-    lp1.setE(e1);
-    lp2.setE(e1);
-    lp3.setE(e1);
+    // lp1.setE(e1);
+    // lp2.setE(e1);
+    // lp3.setE(e1);
+
+    // praticting by own;
+
+    Questions q1=new Questions();
+    q1.setQues_id(1);
+    q1.setQues_name("DSA");
+
+    Answers ao1=new Answers();
+    ao1.setAns_id(101);
+    ao1.setAns_name("Soluton 1");
+
+    Answers ao2=new Answers();
+    ao2.setAns_id(102);
+    ao2.setAns_name("Soluton 2");
+    
+    Answers ao3=new Answers();
+    ao3.setAns_id(103);
+    ao3.setAns_name("Soluton 3");
+
+    List<Answers> list=new ArrayList<Answers>();
+    list.add(ao1);
+    list.add(ao2);
+    list.add(ao3);
+
+    q1.setAns(list);
+
+    ao1.setQues(q1);
+    ao2.setQues(q1);
+    ao3.setQues(q1);
+
+
 
         try{
-            s.save(e1);
-            s.save(lp1);
-            s.save(lp2);
-            s.save(lp3);
+            s.save(q1);
+            s.save(ao1);
+            s.save(ao2);
+            s.save(ao3);
             tr.commit();
         } catch(Exception e){
             tr.rollback();
