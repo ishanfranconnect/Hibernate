@@ -1,5 +1,8 @@
 package a.b.c;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -79,21 +82,53 @@ public class App
 
     // lecture 4 ka object h ye
 
-    State s1=new State();
-    s1.setS_id(5);
-    s1.setS_name("Ishan");
+    // State s1=new State();
+    // s1.setS_id(5);
+    // s1.setS_name("Ishan");
 
-    Capital c1=new Capital();
-    c1.setC_id(6);
-    c1.setC_name("Ishita");
+    // Capital c1=new Capital();
+    // c1.setC_id(6);
+    // c1.setC_name("Ishita");
 
-    s1.setCapital(c1);
-    c1.setS(s1);
+    // s1.setCapital(c1);
+    // c1.setS(s1);
 
+
+    // lectur 5 ka object h ye
+
+    Employee1 e1=new Employee1();
+    e1.setEmp_id(12);
+    e1.setEmp_name("Ishan");
+
+    Laptop lp1=new Laptop();
+    lp1.setlapy_id(101);
+    lp1.setlapy_name("APPLE");
+
+    Laptop lp2=new Laptop();
+    lp2.setlapy_id(102);
+    lp2.setlapy_name("DELL");
+    
+
+    Laptop lp3=new Laptop();
+    lp3.setlapy_id(103);
+    lp3.setlapy_name("HP");
+
+    List<Laptop> list=new ArrayList<Laptop>();
+    list.add(lp1);
+    list.add(lp2);
+    list.add(lp3);
+
+    e1.setLpts(list);
+
+    lp1.setE(e1);
+    lp2.setE(e1);
+    lp3.setE(e1);
 
         try{
-            s.save(s1);
-            s.save(c1);
+            s.save(e1);
+            s.save(lp1);
+            s.save(lp2);
+            s.save(lp3);
             tr.commit();
         } catch(Exception e){
             tr.rollback();
