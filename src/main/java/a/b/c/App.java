@@ -19,26 +19,7 @@ public class App
         Session s=sf.openSession();
         Transaction tr=s.beginTransaction();
 
-
-       
-        Employee eo1=new Employee();
-        eo1.setEmp_fname("xyz2");
-        eo1.setEmp_lname("uyt2");
-        eo1.setEmp_city("Assam2");
-
-        Address ao=new Address();
-        ao.setCity("mumbai2");
-        ao.setState("maharaastra2");
-        ao.setCountry("india2");
-        eo1.setA(ao);
-        try{
-            s.save(eo1);
-            tr.commit();
-        } catch(Exception e){
-            tr.rollback();
-            e.printStackTrace();
-        }
-
+        // lecture 2 ka object h ye
         // fetch the data from database
         // try{
         //     Employee eo2=s.get(Employee.class, 1);
@@ -78,6 +59,48 @@ public class App
         //     tr.rollback();
         //     e.printStackTrace();
         // }
+
+
+    //    lecture 3 ka object h ye
+    //    Annotation ke liye object h ye
+    //     Employee eo1=new Employee();
+    //     eo1.setEmp_fname("xyz2");
+    //     eo1.setEmp_lname("uyt2");
+    //     eo1.setEmp_city("Assam2");
+
+    //     Address ao=new Address();
+    //     ao.setCity("mumbai2");
+    //     ao.setState("maharaastra2");
+    //     ao.setCountry("india2");
+    //     eo1.setA(ao);
+
+
+
+
+    // lecture 4 ka object h ye
+
+    State s1=new State();
+    s1.setS_id(5);
+    s1.setS_name("Ishan");
+
+    Capital c1=new Capital();
+    c1.setC_id(6);
+    c1.setC_name("Ishita");
+
+    s1.setCapital(c1);
+    c1.setS(s1);
+
+
+        try{
+            s.save(s1);
+            s.save(c1);
+            tr.commit();
+        } catch(Exception e){
+            tr.rollback();
+            e.printStackTrace();
+        }
+
+        
         
 
 
