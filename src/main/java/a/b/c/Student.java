@@ -9,7 +9,7 @@ public class Student {
     private int s_id;
     private String S_name;
     private String City;
-
+    
     public void setS_id(int s_id){
         this.s_id=s_id;
     }

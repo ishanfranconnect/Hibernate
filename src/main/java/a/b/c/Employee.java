@@ -1,17 +1,29 @@
 package a.b.c;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
+// agar khud se table ka naam dena h toh nicch lika hua annotation ka use karna hoga
+// @Entity(name="Emp_Table")
 public class Employee {
     @Id
     @GeneratedValue
     private int emp_id;
     private String emp_fname;
+    // @Column(name="Emp_lname")
     private String emp_lname;
     private String emp_city;
+    @Embedded
+    private Address a;
+    public void setA(Address a){
+        this.a=a;
+    }
+    public Address getA(){
+        return a;
+    }
 
     public void setEmp_id(int emp_id){
         this.emp_id=emp_id;

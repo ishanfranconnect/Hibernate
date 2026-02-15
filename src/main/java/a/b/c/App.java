@@ -19,10 +19,25 @@ public class App
         Session s=sf.openSession();
         Transaction tr=s.beginTransaction();
 
-        // Employee eo1=new Employee();
-        // eo1.setEmp_fname("Ishita");
-        // eo1.setEmp_lname("Anand");
-        // eo1.setEmp_city("Muzaffarpur");
+
+       
+        Employee eo1=new Employee();
+        eo1.setEmp_fname("xyz2");
+        eo1.setEmp_lname("uyt2");
+        eo1.setEmp_city("Assam2");
+
+        Address ao=new Address();
+        ao.setCity("mumbai2");
+        ao.setState("maharaastra2");
+        ao.setCountry("india2");
+        eo1.setA(ao);
+        try{
+            s.save(eo1);
+            tr.commit();
+        } catch(Exception e){
+            tr.rollback();
+            e.printStackTrace();
+        }
 
         // fetch the data from database
         // try{
@@ -53,26 +68,20 @@ public class App
 
         // delete data from the database;
 
-        try{
-            Employee eo4=new Employee();
-        eo4.setEmp_id(1);
-        s.delete(eo4);
-        tr.commit();
-        System.out.println("data delted");
-        } catch(Exception e){
-            tr.rollback();
-            e.printStackTrace();
-        }
-        
-
-
         // try{
-        //     s.save(eo1);
-        //     tr.commit();
+        //     Employee eo4=new Employee();
+        // eo4.setEmp_id(1);
+        // s.delete(eo4);
+        // tr.commit();
+        // System.out.println("data delted");
         // } catch(Exception e){
         //     tr.rollback();
         //     e.printStackTrace();
         // }
+        
+
+
+        
 
     
 
